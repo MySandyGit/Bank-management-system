@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://bank-management-backend.onrender.com/api",
+  baseURL: import.meta.env.VITE_API_URL || "https://bank-management-system-backend-jwgv.onrender.com",
 });
 
 // Attach the JWT token (if we have one) to every outgoing request
