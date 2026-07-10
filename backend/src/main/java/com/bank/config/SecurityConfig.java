@@ -75,7 +75,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // React dev server typically runs on one of these ports
-        configuration.setAllowedOrigins(List.of("https://bank-management-system-g6up.vercel.app", "http://localhost:3000"));
+        configuration.setAllowedOrigins(List.of("http://bank-management-system-g6up.vercel.app", "http://localhost:3000"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
