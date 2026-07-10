@@ -17,6 +17,19 @@ public class BankManagementSystemApplication {
         SpringApplication.run(BankManagementSystemApplication.class, args);
     }
 
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")
+                        .allowedOrigins("https://bank-management-system-g6up.vercel.app")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
+            }
+        };
+    }
     /**
      * Runs once when the app starts.
      * Creates a default ADMIN account (if it doesn't already exist) so you
