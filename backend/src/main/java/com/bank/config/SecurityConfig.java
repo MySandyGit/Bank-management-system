@@ -73,7 +73,12 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // React dev server typically runs on one of these ports
-        configuration.setAllowedOrigins(List.of("https://bank-management-system-g6up.vercel.app", "https://localhost:3000"));
+        configuration.setAllowedOriginPatterns(List.of(
+        "https://bank-management-system-g6up.vercel.app",
+        "https://bank-management-system-g6up-*.vercel.app",
+        "http://localhost:3000",
+        "http://localhost:5173"
+    ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
